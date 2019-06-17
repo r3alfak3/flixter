@@ -7,9 +7,57 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
+    <div class="col-6 offset-3 logo text-center">
+    <div id="oval">
+      <%= link_to 'Flixster', root_path, class: 'navbar-brand red house extra-lrg centerOval' %>
+    </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to root_path, class: 'nav-link blue house' do %>
+            <i class="fas fa-home"></i> Videos
+            <% end %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <%= link_to root_path, class: 'nav-link blue house' do %>
+            <i class="fas fa-user-ninja"></i> Sign In
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+    <p class="alert alert-danger red"><%= alert %></p>
+    <% end %>
     <%= yield %>
+
+<footer class="col-12">
+  <div class="container-fluid text-center text-md-left">
+    <div class="row pt-4 px-3">
+      <div class="col-lg-8 col-12 offset-lg-2 offset-0">
+        <h1 class="text-center yellow">Footer</h1>
+        <p class="pt-2 white">Say something.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 text-center pb-3 white">
+    <p class="copyright yellow">© 2019 | 
+    <%= link_to image_tag('stefan_isaia.png', size:'125x38'), 'http://www.stefanisaia.com', target:'_blank' %>
+  </div>
+</footer>    
   </body>
 </html>

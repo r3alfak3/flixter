@@ -1,1 +1,44 @@
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'fengardoneue_black';
+}
+
+.fer-blk { font-family: 'fengardoneue_black'; }
+.fer { font-family: 'fengardoneue'; }
+.droid { font-family: 'droidserif'; }
+.droid-b { font-family: 'droidserif_bold'; }
+.droid-i { font-family: 'droidserif_italic'; }
+.droid-bi { font-family: 'droidserif_bolditalic'; }
+
+/* Naviagation */
+.navbar {
+  box-shadow: 0px 1px 3px #2a2a2a;
+  margin-top: -2.25em;
+}
+
+a.nav-link {
+
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  z-index: 9013;
+}
+
+.navbar-brand {
+  z-index: 9014;
+}
+
+.light-blue-f { color: #80Add7; }
+.light-blue-b { background: #80Add7; }
+.green-f { color: #0ABDA0; }
+.green-b { background: #0ABDA0; }
+.off-white-f { color: #EBF2EA; }
+.off-white-b { background: #EBF2EA; }
+.cream-f { color: #D4DCA9; }
+.cream-b { background: #D4DCA9; }
+.brownish-f { color: #BF9D7A; }
+.brownish-b { background: #BF9D7A; }

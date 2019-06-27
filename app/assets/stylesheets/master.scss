@@ -12,11 +12,12 @@ h1, h2, h3, h4, h5, h6 {
 .droid-b { font-family: 'droidserif_bold'; }
 .droid-i { font-family: 'droidserif_italic'; }
 .droid-bi { font-family: 'droidserif_bolditalic'; }
+.tsa { text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.55); }
 
 /* Naviagation */
 .navbar {
   box-shadow: 0px 1px 3px #2a2a2a;
-  margin-top: -2.25em;
+  margin-top: -2.75rem;
 }
 
 a.nav-link {
@@ -30,6 +31,31 @@ a.nav-link {
 
 .navbar-brand {
   z-index: 9014;
+  position: fixed;
+  margin-top: 2rem;
+}
+
+.sticky {
+  z-index: 9014;
+}
+
+.fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 9014;
+}
+
+/* Index */
+.hero {
+  background: image_url('dolla-dolla-bill-yall.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 350px;
+  padding-top: 56px;
 }
 
 .light-blue-f { color: #80Add7; }

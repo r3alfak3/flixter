@@ -12,7 +12,9 @@ h1, h2, h3, h4, h5, h6 {
 .droid-b { font-family: 'droidserif_bold'; }
 .droid-i { font-family: 'droidserif_italic'; }
 .droid-bi { font-family: 'droidserif_bolditalic'; }
-.tsa { text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.55); }
+.tsa { text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1); }
+.frosty { background: rgba(0, 0, 0, .5); }
+.btn { border-radius: 0; }
 
 /* Naviagation */
 .navbar {
@@ -56,6 +58,7 @@ a.nav-link {
   background-size: cover;
   height: 350px;
   padding-top: 56px;
+  box-shadow: 0px 3px 3px #2a2a2a;
 }
 
 .light-blue-f { color: #80Add7; }

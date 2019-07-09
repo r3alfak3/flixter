@@ -52,6 +52,7 @@ p {
 .cream-b { background: #D4DCA9; }
 .brownish-f { color: #BF9D7A; }
 .brownish-b { background: #BF9D7A; }
+.black { color: #000000; }
 .tsa { text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1); }
 .frosty { background: rgba(0, 0, 0, .5); }
 .btn { border-radius: 0; }
@@ -131,4 +132,8 @@ a.nav-link {
   border-radius: 5px 5px 5px 5px;
   -moz-border-radius: 5px 5px 5px 5px;
   -webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.clr {
+  clear: both;
 }

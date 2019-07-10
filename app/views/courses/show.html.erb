@@ -8,23 +8,9 @@
 					<%= number_to_currency @course.cost %>
 				</span>
 			</h2>
-				<% if current_user && current_user == @course.user %>
-					<%= link_to instructor_course_path(@course), class: 'btn btn-danger btn-large droid' do %>
-						<i class="fas fa-cog"></i>
-						Settings
-					<% end %>
-					<%= link_to new_instructor_course_section_path(@course), class: 'btn btn-danger btn-large mt-2 off-white-f droid' do %>
-						<i class="fas fa-plus-circle"></i>
-						Section
-					<% end %>
-					<%= link_to course_path(@course), class: 'btn btn-danger btn-large mt-2 off-white-f droid' do %>
-						<i class="fas fa-glasses"></i>
-						Preview
-					<% end %>
-				<% end %>
 		</div>
 		<div class="col-md-10 col-12">
 			<p class="droid"><%= @course.description %></p>
 		</div>
-</div>
+	</div>
 </div>

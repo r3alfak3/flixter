@@ -1,16 +1,16 @@
 <br />
-<div class="booch-box col-10 offset-1 p-4 my-5 off-white-b droid brownish-f">
+<div class="booch-box col-10 offset-1 p-4 my-5 off-white-b droid brownish-f bs">
 	<h1 class="fer-blk brownish-f tsa text-center">Time to Heighten Your Senses</h1>
 	<% @courses.each do |course| %>
 	<div class="col-10 offset-1 text-center pb-1">
-		<h2 class="droid-b green-f"><%= course.title %></h2>
+		<h2 class="droid-b green-f"><%= link_to course.title, course_path(course) %></h2>
 	</div>
 	<div class="row">
-		<div class="col-sm-6 col-12">
-			<p class="droid-b black"><% course.description %></p>
+		<div class="col-sm-6 offset-sm-1 col-12 offset-0">
+			<p class="droid-b black"><%= course.description %></p>
 		</div>
 		<div class="col-sm-4 col-12 text-center">
-			<% link_to 'Button', '#', class: 'btn btn-primary btn-large' %>
+			<%= link_to 'More Details...', course_path(course), class: 'btn btn-primary btn-large' %>
 		</div>
 	</div>
 	<br class="clr" />

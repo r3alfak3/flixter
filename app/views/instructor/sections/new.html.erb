@@ -1,7 +1,13 @@
 <br />
 <div class="booch-box col-10 offset-1 p-4 my-5 off-white-b droid brownish-f">
 	<h1 class="fer-blk brownish-f tsa text-center">Add Sections</h1>
+	<%= @course %>
 	<div class="row">
-		
+		<div class="col-md-8 offset-md-2 col-12 offset-0">
+		<%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f| %>
+			<%= f.input :title %>
+			<%= f.submit "ADD SECTION", class: 'btn btn-primary brownish-b' %>
+		</div>
+		<% end %>
 	</div>
 </div>

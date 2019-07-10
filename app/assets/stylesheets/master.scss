@@ -74,6 +74,15 @@ p {
   -webkit-box-shadow: 2px 2px 0px rgba(100,100,100,.75);
 }
 
+/* Buttons */
+.btn.btn-primary.brownish-b, .btn.btn-primary.brownish-b:hover {
+  border: 1px solid #BF9D7A;
+}
+
+.btn.btn-primary.brownish-b:hover {
+  background: #84623F;
+}
+
 /* Naviagation */
 .navbar {
   margin-top: -2.75rem;

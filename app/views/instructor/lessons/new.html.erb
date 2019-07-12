@@ -1,0 +1,14 @@
+<br />
+<div class="booch-box col-10 offset-1 p-4 my-5 off-white-b droid brownish-f">
+	<h1 class="fer-blk brownish-f tsa text-center">Add Lessons</h1>
+	<%= @course %>
+	<div class="row">
+		<div class="col-md-8 offset-md-2 col-12 offset-0">
+		<%= simple_form_for @lesson, url: instructor_section_lessons_path(@section) do |f| %>
+			<%= f.input :title %>
+			<%= f.input :subtitle %>
+			<%= f.submit "ADD LESSON", class: 'btn btn-primary brownish-b' %>
+		</div>
+		<% end %>
+	</div>
+</div>

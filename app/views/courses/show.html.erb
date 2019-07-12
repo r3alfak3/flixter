@@ -1,51 +1,24 @@
 <br />
 <div class="booch-box col-10 offset-1 p-4 my-5 off-white-b bs">
-	<h1 class="text-center fer-blk brownish-f tsa"><%= @course.title %></h1>
-	<div class="row">
-		<div class="col-md-2 col-12 pl-1">
-			<h2>
-				<span class="badge badge-default off-white-f green-b">
-					<%= number_to_currency @course.cost %>
-				</span>
-			</h2>
-			<% if current_user && current_user == @course.user %>
-				<%= link_to instructor_course_path(@course), class: 'btn btn-danger btn-large droid' do %>
-					<i class="fas fa-cog"></i>
-					Settings
-				<% end %>
-				<%= link_to new_instructor_course_section_path(@course), class: 'btn btn-danger btn-large mt-2 off-white-f droid' do %>
-					<i class="fas fa-plus-circle"></i>
-					Section
-				<% end %>
-				<%= link_to course_path(@course), class: 'btn btn-danger btn-large mt-2 off-white-f droid' do %>
-					<i class="fas fa-glasses"></i>
-					Preview
-				<% end %>
-				<ul>
-		    <% @course.sections.each do |section| %>
-					<li>
-						<%= section.title %>
-						<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-danger btn-sm mt-2 off-white-f droid' do %>
-							<i class="fas fa-plus-circle"></i>
-							Lesson
-						<% end %>	
-    			  <ul>
-        			<% section.lessons.each do |lesson| %>
-          		<li>
-            		<b><%= lesson.title %></b>
-            		-
-            		<%= lesson.subtitle %>
-          		</li>
-        			<% end %>
-      			</ul>
-      		<br class="clr" />
-    			</li>
-  			<% end %>
-				</ul>
-			<% end %>
+	<h1 class="text-center fer-blk brownish-f tsa"><%= @course.title %> <span class="badge badge-default off-white-f green-b"><%= number_to_currency @course.cost %></span></h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 col-12">
+				<p class="droid"><%= @course.description %></p>
+			</div>
 		</div>
-		<div class="col-md-10 col-12">
-			<p class="droid"><%= @course.description %></p>
+		<div class="row">
+			<% @course.sections.each do |section| %>
+			<div class="col-md-8 offset-md-2 col-12 offset-0 ">
+				<dl class="row">
+				  <dt class="col-sm-4"><h4 class="brownish-f tsa">LESSONS:</h4></dt>
+				  <dd class="col-sm-8"></dd>
+				  <% section.lessons.each do |lesson| %>
+				  <dt class="col-sm-4"><p><b><%= lesson.title %></b></p></dt>
+				  <dd class="col-sm-8"><p><%= lesson.subtitle %></p></dd>
+				  <% end %>
+				</dl>
+				<% end %>
+			</div>
 		</div>
 	</div>
-</div>

@@ -26,7 +26,7 @@
 		<% current_course.sections.each do |section| %>
 		<div class="col-md-8 offset-md-2 col-12 offset-0 ">
 			<dl class="row">
-				  <dt class="col-sm-4"><h4 class="brownish-f tsa">LESSONS:</h4></dt>
+				<dt class="col-sm-4"><h4 class="brownish-f tsa"><%= section.title %></h4></dt>
 			  <dd class="col-sm-8">
 				<% if current_user && current_user == @course.user %>
 			  	<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-primary brownish-b btn-sm off-white-f droid' do %>

@@ -17,10 +17,14 @@
 			<% @course.sections.each do |section| %>
 			<div class="col-md-8 offset-md-2 col-12 offset-0 ">
 				<dl class="row">
-				  <dt class="col-sm-4"><h4 class="brownish-f tsa">LESSONS:</h4></dt>
+				  <dt class="col-sm-4"><h4 class="brownish-f tsa"><%= section.title %></h4></dt>
 				  <dd class="col-sm-8"></dd>
 				  <% section.lessons.each do |lesson| %>
-				  <dt class="col-sm-4"><p><b><%= lesson.title %></b></p></dt>
+				  <dt class="col-sm-4">
+				  	<%= link_to lesson_path(lesson) do %>
+						<p><b><%= lesson.title %></b></p>
+						<% end %>
+						</dt>
 				  <dd class="col-sm-8"><p><%= lesson.subtitle %></p></dd>
 				  <% end %>
 				</dl>

@@ -15,7 +15,7 @@ private
 
 	def require_authorized_for_current_section
 		if current_session.course.user != current_user
-			return render :plain 'Unauthorized', status: :unauthorized
+			render :plain 'Unauthorized', status: :unauthorized
 		end
 	end
 

@@ -1,6 +1,12 @@
 <br />
 <div class="booch-box col-10 offset-1 p-4 my-5 off-white-b bs">
 	<h1 class="text-center fer-blk brownish-f tsa"><%= @course.title %> <span class="badge badge-default off-white-f green-b"><%= number_to_currency @course.cost %></span></h1>
+		<% if current_user && current_user == @course.user %>
+		<%= link_to instructor_course_path(@course), class: 'btn btn-primary brownish-b btn-large droid' do %>
+			<i class="fas fa-cog"></i>
+			Settings
+		<% end %>
+		<% end %>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-10 col-12">

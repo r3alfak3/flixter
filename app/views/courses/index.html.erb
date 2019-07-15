@@ -4,7 +4,9 @@
 	<% @courses.each do |course| %>
 	<div class="col-10 offset-1 text-center pb-1">
 		<h2 class="droid-b green-f"><%= link_to course.title, course_path(course) %></h2>
-	</div>
+  <% if course.image = nil %>
+	<%= image_tag course.image.url, class: 'img-fluid' %>
+	<% end %>	</div>
 	<div class="row">
 		<div class="col-sm-6 offset-sm-1 col-12 offset-0">
 			<p class="droid-b black"><%= course.description %></p>

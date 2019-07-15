@@ -22,7 +22,7 @@ before_action :require_authorized_for_current_course, only: [:show]
 
 	def require_authorized_for_current_course
 		if current_course.user != current_user
-			render plain: 'Unauthorized', status: :unauthorized
+			return render plain: 'Unauthorized', status: :unauthorized
 		end
 	end
 
@@ -32,6 +32,7 @@ before_action :require_authorized_for_current_course, only: [:show]
 	end
 
 	def course_params
-		params.require(:course).permit(:title, :description, :cost)
+		params.require(:course).permit(:title, :description, :cost, :image)
 	end
+
 end

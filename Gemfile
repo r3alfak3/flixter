@@ -65,6 +65,9 @@ gem 'jquery-rails'
 gem 'popper_js', '< 2', '>= 1.14.3'
 gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
+gem "figaro"
+gem "mini_magick"
+gem "fog-aws"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -21,29 +21,32 @@
 					<% end %>
 	    </div>
 	  </div>
-	</div>
-	<div class="row">
-		<div class="col-md-10 col-12">
-			<p class="droid"><%= current_course.description %></p>
-		</div>
-		<% current_course.sections.each do |section| %>
-		<div class="col-md-8 offset-md-2 col-12 offset-0 ">
-			<dl class="row">
-				<dt class="col-sm-4"><h4 class="brownish-f tsa"><%= section.title %></h4></dt>
-			  <dd class="col-sm-8">
-				<% if current_user && current_user == @course.user %>
-			  	<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-primary brownish-b btn-sm off-white-f droid' do %>
-						<i class="fas fa-plus-circle"></i>
-						Lesson
-					<% end %>
+
+		<div class="row">
+			<div class="col-md-10 col-12">
+				<p class="droid"><%= current_course.description %></p>
+			</div>
+			<div class="col-md-6 offset-md-3 col-12 offset-0 ">
+				<% current_course.sections.each do |section| %>
+					<div class="row">
+						<div class="col-sm-6"><h4 class="brownish-f tsa"><span class="align-middle"><%= section.title %></span></h4></div>
+						<div class="col-sm-6 text-center">
+						<% if current_user && current_user == current_course.user %>
+					  	<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-primary brownish-b btn-sm off-white-f droid' do %>
+								<i class="fas fa-plus-circle"></i>
+								Lesson
+							<% end %>
+						<% end %>
+						</div>
+					</div>
+				  <% section.lessons.each do |lesson| %>
+					  <div class="row">
+						  <div class="col-sm-6"><p><b><%= lesson.title %></b></p></div>
+						  <div class="col-sm-6"><p><%= lesson.subtitle %></p></div>
+						</div>
+				  <% end %>
 				<% end %>
-				</dd>
-			  <% section.lessons.each do |lesson| %>
-			  <dt class="col-sm-4"><p><b><%= lesson.title %></b></p></dt>
-			  <dd class="col-sm-8"><p><%= lesson.subtitle %></p></dd>
-			  <% end %>
-			</dl>
-			<% end %>
+			</div>
 		</div>
 	</div>
 </div>

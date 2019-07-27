@@ -14,22 +14,25 @@
 				<p class="droid"><%= @course.description %></p>
 			</div>
 		</div>
-		<div class="row">
 			<% @course.sections.each do |section| %>
 			<div class="col-md-8 offset-md-2 col-12 offset-0 ">
-				<dl class="row">
-				  <dt class="col-sm-4"><h4 class="brownish-f tsa"><%= section.title %></h4></dt>
-				  <dd class="col-sm-8"></dd>
+				<div class="row">
+				  <div class="col-sm-4"><h4 class="brownish-f tsa"><%= section.title %></h4></div>
+				</div>
 				  <% section.lessons.each do |lesson| %>
-				  <dt class="col-sm-4">
+				  <div class="row">
+				  <div class="col-sm-4">
 				  	<%= link_to lesson_path(lesson) do %>
 						<p><b><%= lesson.title %></b></p>
-						</dt>
 						<% end %>
-				  <dd class="col-sm-8"><p><%= lesson.subtitle %></p></dd>
+						</div>
+				  <div class="col-sm-8">
+				  	<p><%= lesson.subtitle %></p>
+				  </div>
+				</div>
 				  <% end %>
-				</dl>
+				</div>
 				<% end %>
-			</div>
 		</div>
 	</div>
+</div>

@@ -4,7 +4,7 @@
 	<%= @course %>
 	<div class="row">
 		<div class="col-md-8 offset-md-2 col-12 offset-0">
-		<%= simple_form_for @lesson, url: instructor_section_lessons_path(current_session) do |f| %>
+		<%= simple_form_for @lesson, url: instructor_section_lessons_path(current_section) do |f| %>
 			<%= f.input :title %>
 			<%= f.input :subtitle %>
 			<%= f.input :video %>

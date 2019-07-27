@@ -64,8 +64,8 @@ end
 gem 'jquery-rails'
 gem 'popper_js', '< 2', '>= 1.14.3'
 gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave', '>= 2.0.0.rc', '< 3.0'
-gem "figaro"
+gem 'carrierwave-aws'
+gem 'figaro', '>= 1.1.1'
 gem "mini_magick"
 gem "fog-aws"
 

@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="http://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 <body>
@@ -66,25 +67,27 @@
   </nav>
     <%= yield %>
   </div>
-<footer class="col-12 off-white-b">
-  <div class="container-fluid text-center text-md-left">
-    <div class="row pt-4 px-3">
-      <div class="col-lg-8 col-12 offset-lg-2 offset-0">
-        <h1 class="text-center brownish-f tsa">Everything Else</h1>
-          <div class="col-10 offset-1 col-md-5 offset-md-1">
-            <b>Teachers</b>
-            <br />
-            <%= link_to 'Teach a Course', new_instructor_course_path %>          </div>
-          <div class="col-10 offset-1 col-md-5 offset-md-1">
-            <p class="pt-2 brownish-f">Say something.</p>
-          </div>
+  <footer class="col-12 off-white-b">
+    <div class="container-fluid text-center text-md-left">
+      <div class="row pt-4 px-3">
+        <div class="col-lg-8 col-12 offset-lg-2 offset-0">
+          <h1 class="text-center brownish-f tsa">Everything Else</h1>
+            <div class="col-10 offset-1 col-md-5 offset-md-1">
+              <b>Teachers</b>
+              <br />
+              <%= link_to 'Teach a Course', new_instructor_course_path %>          </div>
+            <div class="col-10 offset-1 col-md-5 offset-md-1">
+              <p class="pt-2 brownish-f">Say something.</p>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col-12 text-center pb-3 brownish-f">
-    <p class="copyright brownish-f droid-b">© 2019 | 
-    <%= link_to image_tag('stefan_isaia.png', size:'125x38'), 'http://www.stefanisaia.com', target:'_blank' %>
-  </div>
-</footer>    
+    <div class="col-12 text-center pb-3 brownish-f">
+      <p class="copyright brownish-f droid-b">© 2019 | 
+      <%= link_to image_tag('stefan_isaia.png', size:'125x38'), 'http://www.stefanisaia.com', target:'_blank' %>
+    </div>
+  </footer>
+  <script src="http://vjs.zencdn.net/5.12.6/video.js"></script>
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>   
   </body>
 </html>

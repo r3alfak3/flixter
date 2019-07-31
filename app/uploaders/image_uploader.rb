@@ -21,8 +21,16 @@ class ImageUploader < CarrierWave::Uploader::Base
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
 
+  version :resized do
+    # returns an image with a maximum width of 100px 
+    # while maintaining the aspect ratio
+    # 10000 is used to tell CW that the height is free 
+    # and so that it will hit the 100 px width first
+    process :resize_to_fit => [1000, 30000]
+  end
+
   # Process files as they are uploaded:
-  process resize_to_fill: [800, 350]
+  #process resize_to_fit: [800, 350]
   #
   # def scale(width, height)
   #   # do something

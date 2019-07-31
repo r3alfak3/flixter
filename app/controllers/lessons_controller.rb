@@ -1,36 +1,30 @@
 class LessonsController < ApplicationController
+before_action :authenticate_user!
+before_action :require_enrollment_for_current_lesson, only: [:show]
 
 	def show
-		@lesson = current_user.lesson(course_params)
-		if @course.valid?
-			redirect_to instructor_course_path(@course)
-		else
-			render :new, status: :unprocessable_entity
-		end
-	end	end
+	end
 
   private
 
+  	def require_enrollment_for_current_lesson
+			if !current_user.enrolled_in?(course)
+      	redirect_to course_path(course) , alert: 'Please enroll before proceeding'
+			end
+		end
+
   helper_method :current_lesson
 
-  def current_lesson
-    @current_lesson ||= Lesson.find(params[:id])
-  end
+	  def course
+ 	    course = current_lesson.section.course
+	  end
 
-	def require_authorized_for_current_lesson
-		if current_course.user != current_user
-			return render plain: 'Unauthorized', status: :unauthorized
+	  def enrolled_in?(course)
+		  return enrolled_courses.include?(course)
+	  end
+
+		def current_lesson
+			@current_lesson ||= Lesson.find(params[:id])
 		end
-	end
-
-	helper_method :current_lesson
-	def current_lesson
-		@current_lesson ||= Course.find(params[:course_lesson])
-	end
-
-	def course_params
-		params.require(:course).permit(:title, :description, :cost, :image)
-	end
-
 
 end

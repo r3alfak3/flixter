@@ -37,8 +37,10 @@
 					</div>
 				  <% section.lessons.each do |lesson| %>
 					  <div class="row">
-						  <div class="col-sm-6"><p><b><%= lesson.title %></b></p></div>
-						  <div class="col-sm-6"><p><%= lesson.subtitle %></p></div>
+							<% section.lessons.rank(:row_order).each do |lesson| %>
+						  	<div class="col-sm-6"><p><b><%= lesson.title %></b></p></div>
+						  	<div class="col-sm-6"><p><%= lesson.subtitle %></p></div>
+						  <% end %>
 						</div>
 				  <% end %>
 				<% end %>

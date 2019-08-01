@@ -39,6 +39,15 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
 gem 'stripe'
+gem 'ranked-model'
+
+gem 'jquery-rails'
+gem 'popper_js', '< 2', '>= 1.14.3'
+gem 'bootstrap', '~> 4.3.1'
+gem 'carrierwave-aws'
+gem 'figaro', '>= 1.1.1'
+gem "mini_magick"
+gem "fog-aws"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,14 +70,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
-gem 'jquery-rails'
-gem 'popper_js', '< 2', '>= 1.14.3'
-gem 'bootstrap', '~> 4.3.1'
-gem 'carrierwave-aws'
-gem 'figaro', '>= 1.1.1'
-gem "mini_magick"
-gem "fog-aws"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

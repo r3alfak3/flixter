@@ -46,11 +46,12 @@
 				</div>
 			</div>
 				<% @course.sections.each do |section| %>
-					<div class="col-md-10 offset-md-1 col-12 offset-0 section off-white-b btn mt-3">
-							<div class="col-sm-12 text-center"><h3 class="brownish-f tsa"><%= section.title %></h3></div>
+					<div class="col-md-10 offset-md-1 col-12 offset-0 section off-white-b btn mt-4">
+						<% section.lessons.rank(:row_order).each do |lesson| %>
+						<div class="col-sm-12 text-center"><h3 class="brownish-f tsa"><%= section.title %></h3></div>
 						<div class="row d-flex justify-content-between">
 						<% section.lessons.each do |lesson| %>
-								<div class="col-sm-5 brownish-b text-center bs p-2 mx-auto btn">
+								<div class="col-sm-5 brownish-b text-center bs p-2 mx-auto btn mb-4">
 								  <%= link_to lesson_path(lesson) do %>
 										<h5 class="off-white-f tsa"><b><%= lesson.title %></b></h5>
 									<% end %>
@@ -60,6 +61,7 @@
 								</div>
 							<% end %>
 						</div>
+						<% end %>
 					</div>
 				<% end %>
 			</div>

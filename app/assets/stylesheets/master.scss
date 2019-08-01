@@ -56,7 +56,9 @@ p {
 .black { color: #000000; }
 .tsa { text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1); }
 .frosty { background: rgba(0, 0, 0, .5); }
-.btn {   border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+.btn, img.round-img {   border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+.stripe-button-el { background: none; border-radius: 5px 5px 5px 5px; -moz-border-radius: 5px 5px 5px 5px; -webkit-border-radius: 5px 5px 5px 5px; }
+.stripe-button-el span { font-family: 'fengardoneue_black'; background-image: none; }
 .maxi { max-height: 150px; }
 .lesson { }
 .section { padding: 20px; }
@@ -74,6 +76,10 @@ p {
   box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -moz-box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -webkit-box-shadow: 3px 3px 0px rgba(100,100,100,.1);
+}
+
+.courses:nth-child(odd) {
+  background: #EBF2EA;
 }
 
 /* Buttons */

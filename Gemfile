@@ -40,13 +40,15 @@ gem 'simple_form'
 gem 'devise'
 gem 'stripe'
 gem 'ranked-model'
+gem 'rmagick'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'popper_js', '< 2', '>= 1.14.3'
 gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave-aws'
 gem 'figaro', '>= 1.1.1'
-gem "mini_magick"
+# gem "mini_magick"
 gem "fog-aws"
 
 group :development, :test do

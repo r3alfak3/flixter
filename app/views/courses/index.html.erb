@@ -5,9 +5,11 @@
 	<% @courses.each do |course| %>
 		<div class="courses col-md-4 col-12 px-2 btn">
 			<h3><%= link_to course.title, course_path(course), class: 'fer-blk brownish-f tsa' %></h3>
-		  <% if course.image != nil %>
-				<%= image_tag course.image.url, class: 'img-fluid round-img' %>
-			<% end %>	
+					<% if course.image.url.present? %>
+						<%= image_tag course.image.url, class: 'img-fluid text-center round-img' %>
+					<% else %>
+						<%= image_tag 'default.jpg', class: 'img-fluid text-center round-img' %>
+					<% end %>
 				<div class="row pt-4">
 					<div class="col-8">
 						<p class="droid-b black text-left ml-1"><%= course.description %></p>

@@ -6,6 +6,7 @@
 	    update: function( event, ui ) {
 	    	$.ajax({
 	    		type: 'PUT',
+				  beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
 	    		url: ui.item.data('update-url'),
 	    		dataType: 'json',
 	    		data: { lesson: { row_order_position: ui.item.index() } }
@@ -55,7 +56,7 @@
 					  <div class="row">
 							<ul class="lessons list-group col-12">
 							<% section.lessons.rank(:row_order).each do |lesson| %>
-										<li class="list-group-item" data-update-url=<%= lesson.id %>>
+										<li data-update-url="<%= instructor_lesson_path(lesson) %>">
 											<div class=" col-12 brownish-b text-center bs p-2 mx-auto btn mb-4">
 											  <%= link_to lesson_path(lesson) do %>
 													<h5 class="off-white-f tsa"><b><%= lesson.title %></b></h5>

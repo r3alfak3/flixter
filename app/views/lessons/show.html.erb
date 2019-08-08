@@ -1,14 +1,12 @@
-<div class="booch-box col-10 offset-1 p-4 my-5 off-white-b bs">
-	<h1 class="text-center fer-blk brownish-f tsa"><%= current_lesson.title %></h1>
-	<h3 class="text-center droid-bi brownish-f"><%= current_lesson.subtitle %></h3>
-  <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" width="100%" height="auto"
-  poster="<%= image_path('toad.jpg') %>" data-setup="{}">
-    <source src="<%= current_lesson.video %>" type='video/mp4'>
-    <noscript>
-	    <p class="vjs-no-js">
-	      To view this video please enable JavaScript, and consider upgrading to a web browser that
-	      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-	    </p>
-	  </noscript>
-  </video>	
-</div>
+<h1 class="text-center fer-blk brownish-f tsa"><%= current_lesson.title %></h1>
+<h3 class="text-center droid-bi brownish-f"><%= current_lesson.subtitle %></h3>
+<video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" width="100%" height="auto"
+poster="<%= image_path('toad.jpg') %>" data-setup="{}">
+  <source src="<%= current_lesson.video %>" type='video/mp4'>
+  <noscript>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </noscript>
+</video>

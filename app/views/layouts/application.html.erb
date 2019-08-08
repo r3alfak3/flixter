@@ -12,61 +12,63 @@
   </head>
 <body>
   <div id="flex-content-container">
-    <% if notice.present? %>
-      <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-      <p class="alert alert-danger red"><%= alert %></p>
-    <% end %>
-    <br class="clear">
-  <div class="col-9 col-md-6 offset-md-3 offset-2 logo text-center navbar-brand">
-    <%= link_to image_tag('scamcorder_logo.svg', class: 'maxi'), root_path %>
-  </div>
-  <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top droid-b green-b bs">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between" id="navbar">
-      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-        <li class="nav-item">
-          <%= link_to courses_path, class: 'nav-link off-white-f droid-b' do %>
-          <i class="fas fa-book-open"></i>
-          Browse
-          <% end %>
-        </li>
-      </ul>
-      <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to dashboard_path, class: 'nav-link off-white-f droid-b' do %>
-              <i class="fas fa-user-ninja"></i>
-              Dashboard
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link off-white-f droid-b' do %>
-              <i class="fas fa-sign-out-alt"></i>
-              Sign Out
-            <% end %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to new_user_session_path, class: 'nav-link off-white-f droid-b' do %>
-             <i class="fas fa-sad-cry"></i>
-             Sign In
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to new_user_registration_path, class: 'nav-link off-white-f droid-b' do %>
-             <i class="fas fa-cash-register"></i>
-             Register
-            <% end %>
-          </li>
-        <% end %>
-      </ul>   
+    <div class="col-9 col-md-6 offset-md-3 offset-2 logo text-center navbar-brand">
+      <%= link_to image_tag('scamcorder_logo.svg', class: 'maxi'), root_path %>
     </div>
-  </nav>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top droid-b green-b bs">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+          <li class="nav-item">
+            <%= link_to courses_path, class: 'nav-link off-white-f droid-b' do %>
+            <i class="fas fa-book-open"></i>
+            Browse
+            <% end %>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to dashboard_path, class: 'nav-link off-white-f droid-b' do %>
+                <i class="fas fa-user-ninja"></i>
+                Dashboard
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link off-white-f droid-b' do %>
+                <i class="fas fa-sign-out-alt"></i>
+                Sign Out
+              <% end %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to new_user_session_path, class: 'nav-link off-white-f droid-b' do %>
+               <i class="fas fa-sad-cry"></i>
+               Sign In
+              <% end %>
+            </li>
+            <li class="nav-item">
+              <%= link_to new_user_registration_path, class: 'nav-link off-white-f droid-b' do %>
+               <i class="fas fa-cash-register"></i>
+               Register
+              <% end %>
+            </li>
+          <% end %>
+        </ul>   
+      </div>
+    </nav>
+      <br />
+      <div class="booch-box col-10 offset-1 p-lg-4 p-2 my-5 off-white-b bs">
+        <% if notice.present? %>
+        <p class="alert alert-info"><%= notice %></p>
+        <% end %>
+        <% if alert.present? %>
+        <p class="alert alert-danger red"><%= alert %></p>
+      <% end %>
+      <%= yield %>
+    </div>
   </div>
   <footer class="col-12 off-white-b">
     <div class="container-fluid text-center text-md-left">

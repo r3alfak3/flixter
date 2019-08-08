@@ -66,30 +66,30 @@ a, a:hover { color: white; text-decoration: none; }
 ul, li { list-style-type: none; margin-left: 0px; display:block; }
 .list-group-item { padding: 0; margin: 0; background: transparent; border: 0; }
 .booch-box h1 { margin: 10px; }
-.adminDD:hover { background:#EBF2EA;
-  border-radius: 5px 5px 5px 5px; 
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
-}
+.adminDD:hover { background:#EBF2EA; }
 .lessonDD:hover{ background: #D4DCA9; }
 .booch-box {
   background: #FFFFFF;
   border: 3px solid;
   border-color: #BF9D7A #D4DCA9 #D4DCA9 #BF9D7A;
   padding: 10px;
-  border-radius: 5px 5px 5px 5px;
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 15px 15px 15px 15px;
+  -moz-border-radius: 15px 15px 15px 15px;
+  -webkit-border-radius: 15px 15px 15px 15px;
 }
 .bs {
-  border-radius: 5px 5px 5px 5px; 
-  -moz-border-radius: 5px 5px 5px 5px;
-  -webkit-border-radius: 5px 5px 5px 5px;
   box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -moz-box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -webkit-box-shadow: 3px 3px 0px rgba(100,100,100,.1);
 }
 
+.br {
+  border-radius: 10px 10px 10px 10px; 
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+}
+
+textarea.form-control.text { height: 275px; }
 .courses:nth-child(odd) {
   background: #EBF2EA;
 }
@@ -120,7 +120,7 @@ a.nav-link {
 .navbar-brand {
   z-index: 9014;
   position: fixed;
-  margin-top: -30px;
+  top: -10px;
 }
 
 .sticky {

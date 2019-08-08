@@ -38,10 +38,9 @@ $('#example').tooltip(options)
 	<div class="container">
 	  <div class="row">
 	    <div class="col text-center mt-3 mb-4">
-					<%= link_to new_instructor_course_section_path(current_course), class: 'btn btn-primary brownish-b btn-large off-white-f droid' do %>
-						<i class="fas fa-plus-circle"></i>
-						Section
-					<% end %>
+	    	<button type="button" class="btn btn-md btn-primary brownish-b off-white-f" data-toggle="modal" data-target="#newSectionModal">
+ 				 <i class="fas fa-plus-circle"></i> Launch demo modal
+				</button>
 					<%= link_to course_path(current_course), class: 'btn btn-primary btn-large brownish-b off-white-f droid' do %>
 						<i class="fas fa-glasses"></i>
 						Preview
@@ -68,20 +67,20 @@ $('#example').tooltip(options)
 				<% current_course.sections.rank(:row_order).each do |section| %>
 					<li  data-update-url="<%= instructor_section_path(section) %>">
 						<div class="row">
-							<div class="col-sm-6" id='example' data-toggle="tooltip" data-placement="left" title="Drag & Drop to reorder Sections"><h4 class="brownish-f tsa"><span class="align-middle"><i class="fas fa-ellipsis-v"></i> <%= section.title %></span></h4></div>
-							<div class="col-sm-6 text-center">
+							<div class="col-12 adminDD pt-1" ><h4 class="brownish-f"><span class="align-middle"><i class="fas fa-ellipsis-v"></i> <%= section.title %></span>
 							<% if current_user && current_user == current_course.user %>
-						  	<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-primary brownish-b btn-sm off-white-f droid' do %>
+						  	<%= link_to new_instructor_section_lesson_path(section), class: 'btn btn-primary brownish-b btn-sm off-white-f droid float-right' do %>
 									<i class="fas fa-plus-circle"></i>
 									Lesson
 								<% end %>
 							<% end %>
+							</h4>
 							</div>
 						</div>
 						<ul class="lessons list-group col-12">
 							<% section.lessons.rank(:row_order).each do |lesson| %>
 								<li data-update-url="<%= instructor_lesson_path(lesson) %>">
-									<div class=" col-12 brownish-b text-center bs p-2 mx-auto btn mb-4">
+									<div class=" col-12 brownish-b text-center bs p-2 mx-auto btn mb-4 lessonDD">
 										<span class="cream-f tsa"><i class="fas fa-ellipsis-h"></i></span>
 									  <%= link_to lesson_path(lesson) do %>
 											<h5 class="off-white-f tsa"><b><%= lesson.title %></b></h5>
@@ -98,4 +97,27 @@ $('#example').tooltip(options)
 			</ul>
 		</div>
 	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newSectionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="newSectionModalLabel">Add a New Section</h4>
+      </div>
+			<%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+      <div class="modal-body">
+				<%= f.input :title %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn cream-b" data-dismiss="modal">Close</button>
+				<%= f.submit "ADD SECTION", class: 'btn btn-primary brownish-b' %>
+				<% end %>
+      </div>
+    </div>
+  </div>
 </div>

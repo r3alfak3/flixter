@@ -1,0 +1,42 @@
+<div class="booch-box col-10 offset-1 p-4 my-5 off-white-b bs text-center">
+  <h1 class="brownish-f tsa">Enrolled Classes</h1>
+  <hr class="col-8 offset-2 mb-4" />
+	<div class="row d-flex justify-content-between">
+		<% current_user.enrolled_courses.each do |course| %>
+			<div class="col-lg-5 col-12 bs off-white-b m-4 p-3">
+		  	<h3><%= link_to course.title, course_path(course), class: 'brownish-f fer-blk tsa mb-2' %></h3>
+		  		<div class="col-12">
+						<% if course.image.url.present? %>
+							<%= image_tag course.image.url, class: 'img-fluid text-center round-img' %>
+						<% else %>
+							<%= image_tag 'default.jpg', class: 'img-fluid text-center round-img' %>
+						<% end %>
+					</div>
+		  	<div class="col-12">
+			    <p class="text-left"><%= course.description %></p>
+		        <%= link_to "More Info...", course_path(course), class: 'btn btn-sm brownish-b float-right off-white-f' %>
+			 	</div>
+			</div>
+		<% end %>
+	</div>
+	<h1 class="brownish-f tsa">My Lessons</h1>
+  <hr class="col-8 offset-2 mb-4" />
+	<div class="row d-flex justify-content-between">
+		<% current_user.courses.each do |course| %>
+		<div class="col-lg-5 col-12 bs off-white-b m-4 p-3 float-left">
+	  	<h3><%= link_to course.title, course_path(course), class: 'brownish-f fer-blk tsa mb-2' %></h3>
+	  		<div class="col-12">
+					<% if course.image.url.present? %>
+						<%= image_tag course.image.url, class: 'img-fluid text-center round-img' %>
+					<% else %>
+						<%= image_tag 'default.jpg', class: 'img-fluid text-center round-img' %>
+					<% end %>
+				</div>
+		  	<div class="col-12">
+			    <p class="text-left"><%= course.description %></p>
+	        <%= link_to "More Info...", course_path(course), class: 'btn btn-sm brownish-b float-right off-white-f' %>
+		  	</div>
+			</div>
+		<% end %>
+	</div>
+</div>

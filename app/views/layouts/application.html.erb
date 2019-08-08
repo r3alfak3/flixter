@@ -38,9 +38,9 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to course_path(current_user), class: 'nav-link off-white-f droid-b' do %>
+            <%= link_to dashboard_path, class: 'nav-link off-white-f droid-b' do %>
               <i class="fas fa-user-ninja"></i>
-              Profile
+              Dashboard
             <% end %>
           </li>
           <li class="nav-item">

@@ -37,6 +37,7 @@ p {
   min-height: 100px;
 }
 
+a, a:hover { color: white; text-decoration: none; }
 .fer-blk { font-family: 'fengardoneue_black'; }
 .fer { font-family: 'fengardoneue'; }
 .droid { font-family: 'droidserif'; }
@@ -65,6 +66,12 @@ p {
 ul, li { list-style-type: none; margin-left: 0px; display:block; }
 .list-group-item { padding: 0; margin: 0; background: transparent; border: 0; }
 .booch-box h1 { margin: 10px; }
+.adminDD:hover { background:#EBF2EA;
+  border-radius: 5px 5px 5px 5px; 
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+}
+.lessonDD:hover{ background: #D4DCA9; }
 .booch-box {
   background: #FFFFFF;
   border: 3px solid;
@@ -75,6 +82,9 @@ ul, li { list-style-type: none; margin-left: 0px; display:block; }
   -webkit-border-radius: 5px 5px 5px 5px;
 }
 .bs {
+  border-radius: 5px 5px 5px 5px; 
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border-radius: 5px 5px 5px 5px;
   box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -moz-box-shadow: 3px 3px 0px rgba(100,100,100,.1);
   -webkit-box-shadow: 3px 3px 0px rgba(100,100,100,.1);

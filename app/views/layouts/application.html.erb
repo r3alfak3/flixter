@@ -13,13 +13,8 @@
 <body>
   <%= render partial: "/layouts/header" %>
   <% unless current_page?(root_path) %>
+    <br /><br /><%= render partial: "/layouts/alerts" %>
     <div class="booch-box col-10 offset-1 p-lg-4 p-2 my-5 off-white-b bs">
-      <% if notice.present? %>
-      <p class="alert alert-info"><%= notice %></p>
-      <% end %>
-      <% if alert.present? %>
-      <p class="alert alert-danger red"><%= alert %></p>
-    <% end %>
     <%= yield %>
     </div>
     </div>

@@ -73,10 +73,9 @@
 				<ul class="list-unstyled row lessons">
 					<% section.lessons.rank(:row_order).each do |lesson| %>
 						<li class="list-item col-lg-4 col-12 p-2" data-update-url="<%= instructor_lesson_path(lesson) %>">
-							<div class="col-12 brownish-b text-center bs btn mb-2 lessonDD">
-								<span class="cream-f tsa"><i class="fas fa-ellipsis-h"></i></span>
+							<div class="col-12 brownish-b text-center bs btn lessonDD">
 							  <%= link_to lesson_path(lesson) do %>
-									<p class="off-white-f"><b><%= lesson.title %></b></p>
+									<p class="off-white-f m-2"><i class="fas fa-ellipsis-v"></i> <b><%= lesson.title %></b></p>
 								<% end %>
 							</div>
 						</li>

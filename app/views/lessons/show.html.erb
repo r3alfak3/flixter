@@ -1,6 +1,13 @@
 <h1 class="text-center fer-blk brownish-f tsa"><%= current_lesson.title %></h1>
-<h3 class="text-center droid-bi brownish-f"><%= current_lesson.subtitle %></h3>
-<video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" width="100%" height="auto"
+<h3 class="text-center droid-bi brownish-f float-left"><%= current_lesson.subtitle %></h3>
+<% if current_lesson.next_lesson.present? %>
+<%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-primary brownish-b off-white-f float-right bs' do %>
+<p class="off-white-f m-2">Next Lesson</b> <i class="fas fa-forward"></i></p>
+<% end %>
+<% end %>
+<br class="clr" />
+<br />
+<video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" width="100%"
 poster="<%= image_path('toad.jpg') %>" data-setup="{}">
   <source src="<%= current_lesson.video %>" type='video/mp4'>
   <noscript>

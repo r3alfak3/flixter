@@ -37,7 +37,9 @@ p {
   min-height: 100px;
 }
 
-a, a:hover { color: white; text-decoration: none; }
+a#footer { color: #BF9D7A; }
+
+a:hover { color: white; text-decoration: none; }
 .fer-blk { font-family: 'fengardoneue_black'; }
 .fer { font-family: 'fengardoneue'; }
 .droid { font-family: 'droidserif'; }
@@ -101,6 +103,11 @@ textarea.form-control.text { height: 275px; }
 
 .btn.btn-primary.brownish-b:hover {
   background: #84623F;
+}
+
+.video-mask{
+    border-radius: 10px; 
+    overflow: hidden; 
 }
 
 /* Naviagation */

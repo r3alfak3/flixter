@@ -1,0 +1,40 @@
+  <footer class="col-12 brownish-b">
+    <div class="container-fluid text-center text-md-left">
+      <div class="col-md-10 offset-md-1 col-12 offset-0 row pt-4 px-3 off-white-f">
+      <div class="col-12 col-sm-3">
+        <h5 class="off-white-f-f"><b>Teachers</b></h5>
+        <%= link_to 'Teach a Course', new_instructor_course_path, class: 'cream-f' %>
+        <br />
+        <%= link_to 'My Dashboard', dashboard_path, class: 'cream-f' %>
+      </div>
+      <div class="col-12 col-sm-3">
+        <h5 class="pt-sm-0 pt-3"><b>About</b></h5>
+        <%= link_to 'Team', team_path, class: 'cream-f' %>
+        <br />
+        <%= link_to 'Careers', careers_path, class: 'cream-f' %>
+        <br />
+        <%= link_to 'Privacy Policy', privacy_path, class: 'cream-f' %>
+      </div>
+      <div class="col-12 col-sm-3">
+        <h5 class="pt-sm-0 pt-3"><b>Social</b></h5>
+          <%= link_to 'http://github.com/r3alfak3' do %>
+            <i class="fab fa-github fa-2x cream-f"></i>
+          <% end %>
+          <%= link_to 'http://instagram.com/_realfake' do %>
+            <i class="fab fa-instagram fa-2x cream-f m-2"></i>
+          <% end %>
+          <%= link_to 'http://twitter.com/_realfake' do %>
+            <i class="fab fa-twitter fa-2x cream-f"></i>
+          <% end %>
+      </div>
+      <div class="col-12 col-sm-3">
+        <h5 class="pt-sm-0 pt-3"><b>Contact</b></h5>
+        <p class="cream-f">stefanisaia@gmail.com</p>
+      </div>      
+      </div>
+    </div>
+    <div class="col-12 text-center pb-3 brownish-f">
+      <p class="copyright off-white-f droid-b">© 2019 | 
+      <%= link_to image_tag('stefan_isaia.png', size:'125x38'), 'http://www.stefanisaia.com', target:'_blank' %>
+    </div>
+  </footer>

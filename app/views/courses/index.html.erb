@@ -10,10 +10,10 @@
 							<%= image_tag 'default.jpg', class: 'img-fluid text-center round-img' %>
 						<% end %>
 					<div class="row pt-4">
-						<div class="col-8">
-							<p class="droid-b black text-left ml-1"><%= course.description %></p>
+						<div class="col-12">
+							<p class="droid-b black text-left ml-1"><%= course.description[0..200].gsub(/\s\w+\s*$/,'...') %></p>
 						</div>
-						<div class="col-4">
+						<div class="col-12">
 							<%= link_to 'Details', course_path(course), class: 'btn btn-primary btn-sm float-right fer-blk brownish-b' %>
 						</div>
 					</div>

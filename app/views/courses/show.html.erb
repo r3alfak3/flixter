@@ -44,7 +44,7 @@
 			<% end %>
 		</div>
 		<div class="col-md-6 col-12">
-			<p class="droid"><%= @course.description.truncate_words(50) %></p>
+			<p class="droid"><%= @course.description %></p>
 		</div>
 	</div>
 	<% @course.sections.each do |section| %>
